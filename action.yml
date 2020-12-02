@@ -13,6 +13,9 @@ inputs:
   hosted-zone-id:
     description: "The hosted zone ID from which to delete the record."
     required: true
+  ttl:
+    description: "The TTL of the recordset to delete (defaults to 60)"
+    required: false
   wait-for-change:
     description: "Whether or not to wait for the Route53 change to be applied (defaults to true)"
     required: false

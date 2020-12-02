@@ -11,6 +11,7 @@ async function run() {
         const name = core.getInput('name', { required: true });
         const type = core.getInput('type', { required: true });
         const recordsInput = core.getInput('records', { required: true });
+        const ttl = core.getInput('ttl', { required: false });
         const hostedZoneId = core.getInput('hosted-zone-id', { required: true });
         const waitForChange = core.getInput('wait-for-change', { required: false }) || 'true';
 
@@ -26,7 +27,7 @@ async function run() {
                 ChangeBatch: {
                     Changes: [
                         {
-                            Action: "DELETE",
+                            Action: "CREATE",
                             ResourceRecordSet: {
                                 Name: name,
                                 ResourceRecords: records,

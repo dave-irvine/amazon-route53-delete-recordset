@@ -27,7 +27,7 @@ async function run() {
                 ChangeBatch: {
                     Changes: [
                         {
-                            Action: "CREATE",
+                            Action: "DELETE",
                             ResourceRecordSet: {
                                 Name: name,
                                 ResourceRecords: records,

@@ -1,0 +1,21 @@
+name: 'Amazon Route53 "Delete Recordset" Action for GitHub Actions'
+description: "Deletes a recordset"
+inputs:
+  name:
+    description: "The name of the record to delete."
+    required: true
+  type:
+    description: "The type of record to delete. One of SOA | A | TXT | NS | CNAME | MX | NAPTR | PTR | SRV | SPF | AAAA | CAA."
+    required: true
+  records:
+    description: "The values of the records to delete (comma seperated)."
+    required: true
+  hosted-zone-id:
+    description: "The hosted zone ID from which to delete the record."
+    required: true
+  wait-for-change:
+    description: "Whether or not to wait for the Route53 change to be applied (defaults to true)"
+    required: false
+runs:
+  using: "node12"
+  main: "dist/index.js"

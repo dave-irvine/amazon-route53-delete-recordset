@@ -30,6 +30,7 @@ async function run() {
                             ResourceRecordSet: {
                                 Name: name,
                                 ResourceRecords: records,
+                                TTL: ttl || 60,
                                 Type: type
                             }
                         }
